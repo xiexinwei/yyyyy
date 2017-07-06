@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>个人简历</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">	
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.min.css">
+</head>
+<body>
+	<div class="wrap">
+	<!-- 公共部分 -->
+	<!-- 音乐按钮图标 -->
+		<div class="music">
+			<!-- 提示箭头图标 -->
+			<span class="music-btn animated rotateOut infinite"></span>
+			<audio id="music-bg" src="music/丘梓欣 - 最后一首情歌 - 原版伴奏.mp3" autoplay></audio>
+		</div>
+			<!-- 第一页 -->
+			<div class="page page-1">
+			<div class="p">
+				<p>个</p>
+				<p>人</p>
+				<p>简</p>
+				<p>历</p>
+			</div>
+				<img src="images/o_1b70f9b3cuibgbmkf704nck6j.png" alt="">
+			</div>
+			<!-- page 第二页 -->
+		<div class="page page-2 pageDown">
+			<h1 class="hd hide animated bounceInLeft">个人信息</h1>
+			<br>
+			<hr>
+			<br>
+			<h2 class="hd hide animated bounceInRight">personal information</h2><br>
+			<img class="hd hide animated pulse infinite" src="images/20170706092210.jpg" alt="#"><br>
+			<p class="hd hide animated fadeInLeftBig">姓名：何敏</p>
+			<p class="hd hide animated fadeInRightBig">性别：女</p>
+			<p class="hd hide animated fadeInLeftBig">来自：河北承德</p>
+			<p class="hd hide animated fadeInRightBig">专业：WEB前端</p>
+			<p class="hd hide animated fadeInLeftBig">就读院校：秦基地</p>
+		</div>
+			<!-- page 第三页 -->
+		<div class="page page-3 pageDown">
+			<h1 class="hd hide animated bounceInLeft">自我介绍</h1>
+			<br>
+			<hr>
+			<br>
+			<h2 class="hd hide animated bounceInRight">about me</h2>
+			<br>
+			<br>
+			<p  class="hd hide animated bounceInUp">我性格开朗，积极勤奋，对于其他人能做到有求必应，<br>
+			但我这个人也是爱恨分明。一般不是我的从不强求，因<br>为我知道强求不来。</p><br><br><br>
+			<img src="images/a6.png" alt="">
+		</div>
+			<!-- page 第四页 -->
+		<div class="page page-4 pageDown">
+			<h1 class="hd hide animated bounceInLeft">我的爱好</h1>
+			<br>
+			<hr class="animated bounceIn">
+			<br>
+			<h2 class="hd hide animated bounceInRight">my hobbies</h2>
+			<br>
+			<p>喜欢</p>
+			<p class="l hd hide animated flipInX infinite">蓝天</p>
+			<p class="d hd hide animated flipInY infinite">大海</p>
+			<img class="ma hd hide animated pulse " src="images/psb2.jpg" alt="">
+			<img class="mb hd hide animated pulse " src="images/20170706093157.jpg" alt="#">
+			
+		</div>
+		<!-- 第五页 -->
+		<div class="page page-5 pageDown">
+			<h1 class="hd hide animated bounceInLeft">项目展示</h1>
+			<br>
+			<hr>
+			<br>
+			<h2 class="hd hide animated bounceInRight">project display</h2>
+			<a href="Mbaobao/index.html" title="">http://HM848.coding.me/Mbaobao</a>
+			<img class="hd hide animated pulse infinite" src="images/20170706144325.png" alt="">
+		</div>
+		<!--page 第六页 -->
+		<div class="page page-6 pageDown">
+			<h1 class="hd hide animated bounceInLeft">我的未来</h1>
+			<br>
+			<hr>
+			<br>
+			<h2 class="hd hide animated bounceInRight">my future</h2>
+			<br>
+			<br>
+			<br>
+			<div class="hd hide animated bounceInup">
+			<p><span>2017</span>,我有新的方向</p>
+			<p>我不会像2016年那样浑浑噩噩的度过</p>
+			<p>即使再怎么累</p>
+			<p>也得坚持</p>
+			</div>
+			
+			<img src="images/a2.png" alt="#">
+		</div>
+		<!--page 第七页 -->
+		<br>
+		<br>
+		<div class="page page-7 pageDown">
+		<img src="images/f.png" alt="#">
+			<p>联系方式</p>
+			<p>电话：18713555102</p>
+			<p>	QQ：1512469287</p>
+			<p>微信：t151462848</p>
+			<p>住址：河北承德</p><br/>
+			<img src="images/a3.png" alt="#">
+		</div>	
+	</div>	
+</body>
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript" src="js/touch-0.2.14.min.js"></script>
+<script type="text/javascript"">
+	$(function(){
+
+	var pageIndex = 0;                
+	var pageNum=$(".page").length-1;
+
+	touch.on('.wrap','swipeup',function(){
+		if(pageIndex<pageNum){
+				$(".page").eq(pageIndex).addClass('pageUp');
+				$(".page").eq(pageIndex).find('.hd').addClass('hide');
+				pageIndex=pageIndex+1;
+				$(".page").eq(pageIndex).removeClass('pageDown');
+				$(".page").eq(pageIndex).find('.hd').removeClass('hide');
+		}
+		
+	})
+	touch.on('.wrap','swipedown',function(){
+		if(pageIndex>0){
+				$(".page").eq(pageIndex).addClass('pageDown');
+				$(".page").eq(pageIndex).find('.hd').addClass('hide');
+				pageIndex=pageIndex-1;
+				$(".page").eq(pageIndex).removeClass('pageUp');
+				$(".page").eq(pageIndex).find('.hd').removeClass('hide');
+
+		}
+	})
+
+})
+
+
+
+</script>
+</html>
